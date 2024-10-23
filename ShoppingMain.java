@@ -7,17 +7,9 @@ import java.util.Scanner;
 
 public class ShoppingMain{
 	public static void main(String[] args){
-		// TODO Auto-generated method stub
+		
 		System.out.println("welcome to shopping application");
-		/*String head="welcome to shopping application";
-		char ch[]=head.toCharArray();
-		for(char c:ch)
-		{
-			System.out.print("\033[38;5;205m"+c);
-			Thread.sleep(156);
-		}
-		System.out.println();
-	*/
+		
 		System.out.println("please login the application");
 		System.out.println("enter your mobile");
 		Scanner scanner=new Scanner(System.in);
@@ -29,7 +21,7 @@ public class ShoppingMain{
 					(mobileNumber>6000000000l || 
 							mobileNumber>7000000000l || 
 							mobileNumber>8000000000l || 
-							mobileNumber>9000000000l))
+							mobileNumber>9000000000l))//mobile number validation
 			{
 				int otp=ProductFactory.generateOTP();
 				System.out.println("Your otp is : "+otp);
@@ -39,11 +31,11 @@ public class ShoppingMain{
 				
 				int OTPChance=5;
 				while(cond) {
-				if(inputOTP==otp)
+				if(inputOTP==otp)//otp validation
 				{
 					System.out.println("Login successfull👍");
 					List<Product> productList=new ArrayList();
-	//				boolean cond=true;
+	
 					while(cond)
 					{
 						ProductFactory.displayOptions();
@@ -80,8 +72,7 @@ public class ShoppingMain{
 									ProductFactory.removeProduct(itr, productList);
 								}
 							}
-	//						Iterator<Product> itr=productList.iterator();
-	//						ProductFactory.removeProduct(itr, productList);
+	
 						}
 						break;
 						
